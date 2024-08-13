@@ -1,40 +1,46 @@
 {
-  "id": "/",
+  "short_name": "Storage App",
+  "theme_color": "#453be9",
+  "background_color": "#000000",
+  "name": "A React Storage PWA",
+  "description": "A React app PWA to help users keep track of there storage and products, so as little as possible goes to waste",
+  "id": ".",
   "scope": "/",
-  "name": "storage-app-pwa",
   "display": "standalone",
   "start_url": "/",
-  "short_name": "starter",
-  "theme_color": "#E1477E",
-  "description": "This is a storage-app-pwa app",
-  "orientation": "any",
-  "background_color": "#E1477E",
+  "orientation": "portrait",
   "related_applications": [],
   "prefer_related_applications": false,
-  "display_override": ["window-controls-overlay"],
+  "display_override": [
+    "window-controls-overlay"
+  ],
   "launch_handler": {
     "client_mode": "focus-existing"
   },
   "icons": [
     {
-      "src": "assets/icons/512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/192x192.png",
+      "src": "assets/icons/manifest-icon-192.maskable.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "assets/icons/48x48.png",
-      "sizes": "48x48",
-      "type": "image/png"
+      "src": "assets/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
-      "src": "assets/icons/24x24.png",
-      "sizes": "24x24",
-      "type": "image/png"
+      "src": "assets/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "screenshots": [
@@ -54,11 +60,40 @@
   ],
   "shortcuts": [
     {
-      "name": "Open About",
-      "short_name": "About",
-      "description": "Open the about page",
+      "name": "My storage",
+      "url": "/",
+      "description": "The homepage where all items are shown",
+      "icons": [
+        {
+          "src": "icon-96x96.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Add an item",
+      "url": "/add-item",
+      "description": "The page where the user can add an item by type",
+      "icons": [
+        {
+          "src": "icon-96x96.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "About",
       "url": "/about",
-      "icons": [{ "src": "assets/icons/192x192.png", "sizes": "192x192" }]
+      "description": "The page where the user can add an item by type",
+      "icons": [
+        {
+          "src": "icon-96x96.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        }
+      ]
     }
   ],
   "widgets": [

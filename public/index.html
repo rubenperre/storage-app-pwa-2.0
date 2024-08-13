@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link href="%PUBLIC_URL%/favicon.ico" rel="icon"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="#181818" media="(prefers-color-scheme: dark)" name="theme-color"/>
+    <meta content="#f3f3f3" media="(prefers-color-scheme: light)" name="theme-color"/>
+
+    <meta content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+          name="viewport"/>
+    <meta content="This is a storage-app-pwa app" name="description"/>
+    <link href="%PUBLIC_URL%/logo192.png" rel="apple-touch-icon"/>
+
+    <!-- These meta tags are Apple-specific, and set the web application to run in full-screen mode with a black status bar. Learn more at https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="storage-app-pwa" name="apple-mobile-web-app-title"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+
+    <!-- This tag is used by the storage-app-pwa CLI to identify template projects. Don't remove if you are using the CLI. -->
+    <meta content="pwa-starter" name="pwa-starter-template-identity"/>
+
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link href="%PUBLIC_URL%/manifest.json" rel="manifest"/>
+
+    <!-- light mode and dark mode CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.73/dist/themes/light.css"
+          media="(prefers-color-scheme:light)"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.73/dist/themes/dark.css"
+          media="(prefers-color-scheme:dark)"
+          onload="document.documentElement.classList.add('sl-theme-dark');"
+          rel="stylesheet">
+
+    <link href="%PUBLIC_URL%/assets/icons/apple-icon-180.png" rel="apple-touch-icon">
+
+    <meta content="yes" name="apple-mobile-web-app-capable">
+
+    <link href="/assets/icons/apple-splash-2048-2732.jpg"
+          media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2732-2048.jpg"
+          media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1668-2388.jpg"
+          media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2388-1668.jpg"
+          media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1536-2048.jpg"
+          media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2048-1536.jpg"
+          media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1488-2266.jpg"
+          media="(device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2266-1488.jpg"
+          media="(device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1640-2360.jpg"
+          media="(device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2360-1640.jpg"
+          media="(device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1668-2224.jpg"
+          media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2224-1668.jpg"
+          media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1620-2160.jpg"
+          media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2160-1620.jpg"
+          media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1290-2796.jpg"
+          media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2796-1290.jpg"
+          media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1179-2556.jpg"
+          media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2556-1179.jpg"
+          media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1284-2778.jpg"
+          media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2778-1284.jpg"
+          media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1170-2532.jpg"
+          media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2532-1170.jpg"
+          media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1125-2436.jpg"
+          media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2436-1125.jpg"
+          media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1242-2688.jpg"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2688-1242.jpg"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-828-1792.jpg"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1792-828.jpg"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1242-2208.jpg"
+          media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-2208-1242.jpg"
+          media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-750-1334.jpg"
+          media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1334-750.jpg"
+          media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-640-1136.jpg"
+          media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+    <link href="/assets/icons/apple-splash-1136-640.jpg"
+          media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>storage-app-pwa</title>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+</body>
+</html>
