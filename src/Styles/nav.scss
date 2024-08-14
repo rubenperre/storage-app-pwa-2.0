@@ -1,0 +1,121 @@
+@import "library";
+
+$screen-max-width: 40em;
+$ul-padding-vert: 1rem;
+
+$ul-height: calc(
+        100vh - ($nav-total-height + ($ul-padding-vert * 2)));
+.logo {
+  max-width: 100%;
+}
+
+nav {
+  z-index: 1;
+  flex: 1;
+  align-self: flex-start;
+  padding: $nav-padding-vert 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $black-transparent;
+
+  @include black-back-blur(.8);
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  height: $nav-height;
+
+
+  & > div > ul {
+    $ul-width: 25%;
+    @include black-back-blur(.8);
+    top: 0;
+    backdrop-filter: blur(1rem);
+    height: $ul-height;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    max-width: $ul-width;
+    padding: $ul-padding-vert 2rem;
+    transition: 0.2s ease-out;
+  }
+}
+
+.links-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 2rem;
+}
+
+li {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+
+  & > a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.hamburger-button {
+  display: block;
+  height: 3rem;
+  width: 3rem;
+  position: relative;
+  font-size: 12px;
+
+  /* Remove default button styles */
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 150%;
+    width: 150%;
+    top: -25%;
+    left: -25%;
+  }
+
+  div {
+    top: 50%;
+    margin-top: -0.125em;
+
+    &,
+    &:after,
+    &:before {
+      height: 2px;
+      pointer-events: none;
+      display: block;
+      content: "";
+      width: 100%;
+      background-color: white;
+      position: absolute;
+    }
+
+    &:after {
+      top: -0.8rem;
+    }
+
+    &:before {
+      top: 0.8rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-max-width) {
+
+
+}

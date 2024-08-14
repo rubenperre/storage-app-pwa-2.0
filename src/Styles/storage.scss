@@ -1,0 +1,98 @@
+@import "library";
+
+$expire-status: (
+        expired: red,
+        expiring: orange,
+        okay: yellow,
+        new: green,
+);
+
+.items-content {
+  width: max(80vw);
+  gap: 2rem;
+
+  & > a {
+    align-self: center;
+  }
+}
+
+.item {
+  gap: 1rem;
+
+  & > p {
+    text-align: center;
+    margin: 0;
+  }
+
+  & > button {
+
+    &:hover {
+
+      cursor: pointer;
+
+      & > svg {
+        transition: fill 0.1s ease;
+        fill: red;
+      }
+    }
+
+    align-self: center;
+    background-color: transparent;
+    border: none;
+
+    & > svg {
+      min-height: 1.3rem;
+      width: auto;
+    }
+  }
+}
+
+.progress-container {
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.progress-bar {
+  flex-grow: 4;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  width: 100%;
+  background-color: $black-transparent;
+
+  @each $color, $value in $expire-status {
+    &-fill-#{$color} {
+      height: 100%;
+      border-radius: 2rem;
+      background-color: $value;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .items-content {
+    width: 90%;
+  }
+
+  .progress-container {
+    flex-wrap: wrap;
+    gap: 0;
+
+    & > p {
+      text-align: center;
+    }
+
+    & > * {
+      padding-bottom: 0;
+      width: 40%;
+    }
+  }
+
+  .progress-bar {
+    order: 3;
+  }
+}

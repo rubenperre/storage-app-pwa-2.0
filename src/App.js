@@ -19,12 +19,12 @@ function App() {
       </header>
 
       <main>
-        <DarkModeToggle /> <Nav />{' '}
+        <DarkModeToggle />
+        <Nav />
         <Routes>
-          {' '}
-          <Route index path="/" element={<Storage />} />{' '}
-          <Route path="add-item" element={<AddItem />} />{' '}
-          <Route path="about" element={<About />} />{' '}
+          <Route index path="/" element={<Storage />} />
+          <Route path="add-item" element={<AddItem />} />
+          <Route path="about" element={<About />} />
         </Routes>
       </main>
 

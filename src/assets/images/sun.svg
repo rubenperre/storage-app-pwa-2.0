@@ -1,0 +1,19 @@
+<svg width="100%" height="100%"
+     viewBox="0 0 2084 2084"
+     version="1.1" xmlns="http://www.w3.org/2000/svg"
+     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;">
+    <rect id="sun" x="0" y="0" width="2083.33" height="2083.33" style="fill:none;"/>
+    <circle cx="1041.67" cy="1041.67" r="429.688" style="fill:none;stroke:#000;stroke-width:171.88px;"/>
+    <path d="M1041.67,96.354l-0,171.875" style="fill:none;fill-rule:nonzero;stroke:#000;stroke-width:171.88px;"/>
+    <path d="M1041.67,1815.1l-0,171.875" style="fill:none;fill-rule:nonzero;stroke:#000;stroke-width:171.88px;"/>
+    <path d="M373.073,373.073l122.031,122.031"
+          style="fill:none;fill-rule:nonzero;stroke:#000;stroke-width:171.88px;"/>
+    <path d="M1588.23,1588.23l122.031,122.031"
+          style="fill:none;fill-rule:nonzero;stroke:#000;stroke-width:171.88px;"/>
+    <path d="M96.354,1041.67l171.875,-0" style="fill:none;fill-rule:nonzero;stroke:#000;stroke-width:171.88px;"/>
+    <path d="M1815.1,1041.67l171.875,-0" style="fill:none;fill-rule:nonzero;stroke:#000;stroke-width:171.88px;"/>
+    <path d="M373.073,1710.26l122.031,-122.031"
+          style="fill:none;fill-rule:nonzero;stroke:#000;stroke-width:171.88px;"/>
+    <path d="M1588.23,495.104l122.031,-122.031"
+          style="fill:none;fill-rule:nonzero;stroke:#000;stroke-width:171.88px;"/>
+</svg>

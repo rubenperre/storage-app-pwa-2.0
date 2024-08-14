@@ -1,0 +1,114 @@
+@import "library";
+
+.add-item-page {
+  justify-content: space-between;
+
+  & > :first-child {
+    margin-top: $nav-total-height;
+  }
+
+  & > :last-child {
+    margin-bottom: calc($nav-total-height + 1rem);
+  }
+}
+
+form {
+  & select {
+    text-align: center;
+    padding: 0.5rem 2rem;
+  }
+}
+
+.add-buttons-container {
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+
+
+  & > .add-item-button {
+    padding: 1rem 2rem;
+    width: 30%;
+
+    &:hover {
+      transform: scale(0.95);
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    & > div {
+      width: 100%;
+      height: 100%;
+      gap: .5rem;
+      display: flex;
+      flex-direction: column; /* Align items vertically */
+      align-items: center;
+      justify-content: space-evenly;
+
+      & > img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $black-transparent;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 80vw;
+  width: 100%;
+  text-align: center;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 100%;
+    gap: 1rem;
+
+    div {
+      margin-bottom: 10px;
+
+      label {
+        width: max(90%);
+
+      }
+
+
+      input {
+        width: max(90%);
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: var(--bg-color-1);
+      color: var(--bg-color-2);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-weight: bold;
+
+      &:hover {
+        background-color: var(--bg-color-2);
+        color: var(--bg-color-1);
+      }
+    }
+  }
+}
