@@ -80,7 +80,7 @@ function Storage() {
       <header>
         <h3 className="hide">items</h3>
       </header>
-      <article className=" flex flex-column items-content scrollable-article ">
+      <article className=" flex flex-column items-content scrollable-container ">
         {expiredItems.length > 0 && (
           <section id="expired-items" className="storage-list">
             <h4

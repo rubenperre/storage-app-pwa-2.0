@@ -1,5 +1,6 @@
 import AddItem from '../components/add-item/AddItem';
 import '../styles/add-items.scss';
+import AddNewStorage from '../components/AddNewStorage';
 
 function AddItemPage() {
   return (
@@ -7,7 +8,10 @@ function AddItemPage() {
       <header>
         <h2>Add an Item</h2>
       </header>
-      <AddItem />
+      <div className="scrollable-container">
+        <AddItem />
+        <AddNewStorage />
+      </div>
     </section>
   );
 }

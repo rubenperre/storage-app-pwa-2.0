@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <section className="about-container">
+    <section className="about-container scrollable-container">
       <h3>About Storage App</h3>
       <p>
         Welcome to the Storage App, a platform designed to help you manage and

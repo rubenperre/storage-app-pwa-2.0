@@ -2,13 +2,10 @@
 
 .add-item-page {
   justify-content: space-between;
-
-  & > :first-child {
-    margin-top: $nav-total-height;
-  }
+  
 
   & > :last-child {
-    margin-bottom: calc($nav-total-height + 1rem);
+    margin-bottom: calc($nav-total-height);
   }
 }
 

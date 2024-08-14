@@ -11,7 +11,7 @@ const AddItemButton = ({ onClick, type }) => {
       const name = type.toLocaleLowerCase();
 
       try {
-        const iconRef = ref(storage, `${name}.png`);
+        const iconRef = ref(storage, `storage-images/${name}.png`);
         const url = await getDownloadURL(iconRef);
         setIconUrl(url);
       } catch (error) {
