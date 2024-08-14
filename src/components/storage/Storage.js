@@ -6,7 +6,6 @@ import {
 } from '../../utils/StorageUtils';
 import { Link } from 'react-router-dom';
 import Item from './Item';
-import '../../styles/storage.scss';
 import { FaChevronDown, FaChevronLeft, FaPlus } from 'react-icons/fa';
 
 function processItems(items, handleDelete) {
@@ -83,7 +82,7 @@ function Storage() {
       </header>
       <article className=" flex flex-column items-content scrollable-article ">
         {expiredItems.length > 0 && (
-          <>
+          <section id="expired-items" className="storage-list">
             <h4
               className="flex flex-row"
               onClick={toggleExpiredCollapse}
@@ -95,11 +94,11 @@ function Storage() {
               </span>
             </h4>
             {!isExpiredCollapsed && expiredItems}
-          </>
+          </section>
         )}
 
         {nonExpiredItems.length > 0 && (
-          <>
+          <section id="non-expired-items" className="storage-list">
             <h4
               className="flex flex-row"
               onClick={toggleNonExpiredCollapse}
@@ -111,7 +110,7 @@ function Storage() {
               </span>
             </h4>
             {!isNonExpiredCollapsed && nonExpiredItems}
-          </>
+          </section>
         )}
 
         {nonExpiredItems.length === 0 && expiredItems.length === 0 && (

@@ -9,6 +9,13 @@ $expire-status: (
 );
 
 
+.storage-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
 .items-content {
   width: max(80vw);
   gap: 2rem;
