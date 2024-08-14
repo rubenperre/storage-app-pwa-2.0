@@ -34,6 +34,8 @@
 }
 
 body {
+  margin: 0;
+  height: max(100%);
   font-size: 1.4rem;
   font-family: sans-serif;
   background: var(--bg-color-1);
@@ -41,6 +43,15 @@ body {
   background: -webkit-linear-gradient(21deg, var(--bg-color-1) 23%, var(--bg-color-2) 100%);
   background: linear-gradient(21deg, var(--bg-color-1) 23%, var(--bg-color-2) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#453be9", endColorstr="#ee49fd", GradientType=1);
+
+
+  & p, svg, a, div, button {
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
 }
 
 html {
@@ -62,11 +73,6 @@ main {
     display: flex;
     flex-direction: column;
   }
-}
-
-body {
-  margin: 0;
-  height: max(100%);
 }
 
 h1, h2, h3 {
@@ -135,15 +141,7 @@ h1, h2, h3 {
   }
 }
 
-/*@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color-1: #453be9;
-    --bg-color-2: #ee49fd;
-  }
+.scrollable-article {
+  max-height: 80vh;
+  overflow-y: auto;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-color-1: #00B4B2;
-    --bg-color-2: #74FEBD;
-  }*/

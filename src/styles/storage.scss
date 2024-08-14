@@ -1,4 +1,5 @@
 @import "library";
+@import "../App";
 
 $expire-status: (
         expired: red,
@@ -6,6 +7,7 @@ $expire-status: (
         okay: yellow,
         new: green,
 );
+
 
 .items-content {
   width: max(80vw);

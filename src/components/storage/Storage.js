@@ -7,10 +7,56 @@ import {
 import { Link } from 'react-router-dom';
 import Item from './Item';
 import '../../styles/storage.scss';
-import { FaPlus } from 'react-icons/fa';
+import { FaChevronDown, FaChevronLeft, FaPlus } from 'react-icons/fa';
+
+function processItems(items, handleDelete) {
+  const expiredItems = [];
+  const nonExpiredItems = [];
+
+  items.forEach((item) => {
+    const buyDate = new Date(item.buyDate);
+    const expireDate = new Date(item.expireDate);
+
+    const percentage = calculatePercentage(buyDate, expireDate);
+    const daysToExpire = Math.ceil(
+      (expireDate - Date.now()) / (24 * 60 * 60 * 1000)
+    );
+
+    const expireProgress =
+      percentage >= 100
+        ? 'expired'
+        : percentage >= 75
+          ? 'expiring'
+          : percentage >= 50
+            ? 'okay'
+            : 'new';
+
+    const itemComponent = (
+      <Item
+        key={item.id}
+        item={item}
+        onClick={() => handleDelete(item.id)}
+        expireProgress={expireProgress}
+        percentage={percentage}
+        daysToExpire={daysToExpire}
+      />
+    );
+
+    if (expireProgress === 'expired') {
+      expiredItems.push(itemComponent);
+    } else {
+      nonExpiredItems.push(itemComponent);
+    }
+  });
+
+  return { expiredItems, nonExpiredItems };
+}
 
 function Storage() {
   const [items, setItems] = useState([]);
+  const [isExpiredCollapsed, setIsExpiredCollapsed] = useState(false);
+  const [isNonExpiredCollapsed, setIsNonExpiredCollapsed] = useState(false);
+
   useEffect(() => {
     getItems(setItems);
   }, []);
@@ -21,53 +67,59 @@ function Storage() {
     });
   };
 
+  const toggleExpiredCollapse = () => {
+    setIsExpiredCollapsed(!isExpiredCollapsed);
+  };
+  const toggleNonExpiredCollapse = () => {
+    setIsNonExpiredCollapsed(!isNonExpiredCollapsed);
+  };
+
+  const { expiredItems, nonExpiredItems } = processItems(items, handleDelete);
+
   return (
     <section className="flex flex-center">
       <header>
         <h3 className="hide">items</h3>
       </header>
-      <article className=" flex flex-column items-content">
-        {items?.length ? (
+      <article className=" flex flex-column items-content scrollable-article ">
+        {expiredItems.length > 0 && (
           <>
-            {items.map((item) => {
-              const buyDate = new Date(item.buyDate);
-              const expireDate = new Date(item.expireDate);
-
-              const percentage = calculatePercentage(buyDate, expireDate);
-              const daysToExpire = Math.ceil(
-                (expireDate - Date.now()) / (24 * 60 * 60 * 1000)
-              );
-
-              const expireProgress =
-                percentage >= 100
-                  ? 'expired'
-                  : percentage >= 75
-                    ? 'expiring'
-                    : percentage >= 50
-                      ? 'okay'
-                      : 'new';
-              console.log(item);
-              return (
-                <Item
-                  key={item.id}
-                  item={item}
-                  onClick={() => handleDelete(item.id, setItems)}
-                  expireProgress={expireProgress}
-                  percentage={percentage}
-                  daysToExpire={daysToExpire}
-                />
-              );
-            })}
-            <Link to="/add-item" className="glass-block flex add-item-button">
-              <FaPlus /> Add Item
-            </Link>
+            <h4
+              className="flex flex-row"
+              onClick={toggleExpiredCollapse}
+              style={{ cursor: 'pointer' }}
+            >
+              Expired Items
+              <span className="icon flex flex-center">
+                {isExpiredCollapsed ? <FaChevronLeft /> : <FaChevronDown />}
+              </span>
+            </h4>
+            {!isExpiredCollapsed && expiredItems}
           </>
-        ) : (
-          <p>
-            No items in storage.
-            <Link to="/add-item">Add an item</Link>.
-          </p>
         )}
+
+        {nonExpiredItems.length > 0 && (
+          <>
+            <h4
+              className="flex flex-row"
+              onClick={toggleNonExpiredCollapse}
+              style={{ cursor: 'pointer' }}
+            >
+              Fresh Items
+              <span className="icon flex flex-center">
+                {isNonExpiredCollapsed ? <FaChevronLeft /> : <FaChevronDown />}
+              </span>
+            </h4>
+            {!isNonExpiredCollapsed && nonExpiredItems}
+          </>
+        )}
+
+        {nonExpiredItems.length === 0 && expiredItems.length === 0 && (
+          <p>No items in storage.</p>
+        )}
+        <Link to="/add-item" className="glass-block flex add-item-button">
+          <FaPlus /> Add Item
+        </Link>
       </article>
     </section>
   );
