@@ -11,13 +11,12 @@ import DarkModeToggle from './components/DarkModeToggle';
 
 Modal.setAppElement(document.body);
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <header className="App-header">
         <h1 className="hide">Storage App</h1>
       </header>
-
       <main>
         <DarkModeToggle />
         <Nav />
@@ -27,10 +26,7 @@ function App() {
           <Route path="about" element={<About />} />
         </Routes>
       </main>
-
       <footer></footer>
     </BrowserRouter>
   );
 }
-
-export default App;
