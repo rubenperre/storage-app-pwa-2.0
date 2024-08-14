@@ -35,8 +35,11 @@ $expire-status: (
 
   & > button {
 
-    &:hover {
+    align-self: center;
+    background-color: transparent;
+    border: none;
 
+    &:hover {
       cursor: pointer;
 
       & > svg {
@@ -44,10 +47,6 @@ $expire-status: (
         fill: red;
       }
     }
-
-    align-self: center;
-    background-color: transparent;
-    border: none;
 
     & > svg {
       min-height: 1.3rem;
