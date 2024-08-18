@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.scss';
+import Nav from './components/Nav';
+import Storage from './pages/StoragePage';
+import AddItem from './pages/AddItemPage';
+import About from './pages/AboutPage';
 
-function App() {
+import Modal from 'react-modal';
+import DarkModeToggle from './components/DarkModeToggle';
+
+Modal.setAppElement(document.body);
+
+export default function App() {
   return (
-    <div className="App">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="hide">Storage App</h1>
       </header>
-    </div>
+      <main>
+        <DarkModeToggle />
+        <Nav />
+        <Routes>
+          <Route index path="/" element={<Storage />} />
+          <Route path="add-item" element={<AddItem />} />
+          <Route path="about" element={<About />} />
+        </Routes>
+      </main>
+      <footer></footer>
+    </BrowserRouter>
   );
 }
-
-export default App;

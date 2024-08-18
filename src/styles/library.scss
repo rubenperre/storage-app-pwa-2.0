@@ -1,0 +1,10 @@
+$black: #252525;
+$black-transparent: rgba($black, 0.58);
+
+@mixin black-back-blur($blur) {
+  background-color: rgba($black, $blur);
+}
+
+$nav-padding-vert: 1rem;
+$nav-height: 5vh;
+$nav-total-height: calc($nav-height + ($nav-padding-vert * 2));

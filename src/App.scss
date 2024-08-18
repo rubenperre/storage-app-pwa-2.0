@@ -1,0 +1,153 @@
+@import "styles/library";
+
+:root {
+  --bg-color-1: #00B4B2;
+  --bg-color-2: #74FEBD;
+  --text-color: white;
+  --accent: purple;
+}
+
+[data-theme='dark'] {
+  --bg-color-1: #453be9;
+  --bg-color-2: #ee49fd;
+  --text-color: white;
+  --accent: darkred;
+}
+
+[data-theme='light'] {
+  --bg-color-1: #00B4B2;
+  --bg-color-2: #74FEBD;
+  --text-color: #{$black};
+  --accent: purple;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+* {
+  transition: all 0.4s ease;
+}
+
+body {
+  margin: 0;
+  height: max(100%);
+
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  background: var(--bg-color-1);
+  background: -moz-linear-gradient(21deg, var(--bg-color-1) 23%, var(--bg-color-2) 100%);
+  background: -webkit-linear-gradient(21deg, var(--bg-color-1) 23%, var(--bg-color-2) 100%);
+  background: linear-gradient(21deg, var(--bg-color-1) 23%, var(--bg-color-2) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#453be9", endColorstr="#ee49fd", GradientType=1);
+
+
+  & p, svg, a, div, button {
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+html {
+  margin: 0;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+main {
+  position: relative;
+  height: 100%;
+
+  & > section {
+    /*height: max(100%);*/
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.hide {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-space-around {
+  justify-content: space-around;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.glass-block {
+  padding: 2rem;
+  background: $black-transparent;
+  border-radius: 40px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid $black-transparent;
+}
+
+.about-container {
+  max-width: 100%;
+  padding: 1rem 1rem 1rem;
+}
+
+.dark-mode-toggle {
+  height: max(5vh);
+  border: none;
+  background: none;
+  margin: .5rem;
+  /* height: 100%;*/
+
+  & > img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0px 100px 0 var(--text-color));
+    transform: translateY(-100px);
+    transition-duration: 0ms;
+  }
+}
+
+.scrollable-container {
+  max-height: 80vh;
+  overflow-y: auto;
+}
