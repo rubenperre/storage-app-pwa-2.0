@@ -2,7 +2,7 @@
 
 .add-item-page {
   justify-content: space-between;
-  
+
 
   & > :last-child {
     margin-bottom: calc($nav-total-height);
@@ -48,6 +48,10 @@ form {
       }
     }
   }
+}
+
+.add-item-button {
+  
 }
 
 .modal {

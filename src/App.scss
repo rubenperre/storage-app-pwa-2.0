@@ -29,8 +29,12 @@
   box-sizing: inherit;
 }
 
-* {
+.item, {
   transition: all 0.4s ease;
+
+  &:hover {
+
+  }
 }
 
 body {
@@ -48,10 +52,6 @@ body {
 
   & p, svg, a, div, button {
     color: var(--text-color);
-
-    &:hover {
-      color: var(--accent);
-    }
   }
 }
 
@@ -74,6 +74,10 @@ main {
     display: flex;
     flex-direction: column;
   }
+}
+
+button {
+  cursor: pointer;
 }
 
 h1, h2, h3 {

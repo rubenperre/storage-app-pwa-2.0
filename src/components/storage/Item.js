@@ -34,7 +34,11 @@ function Item(props) {
         <p>{props.item.type}</p>
         <p>{props.item.storage}</p>
       </div>
-      <p>Dagen Resterend: {props.daysToExpire}</p>
+      {props.daysToExpire < 0 ? (
+        <p>Dagen overtijd: {-props.daysToExpire}</p>
+      ) : (
+        <p>Dagen Resterend: {props.daysToExpire}</p>
+      )}
       <article className="flex progress-container">
         <p>{formattedBuyDate}</p>
         <div className="progress-bar">
