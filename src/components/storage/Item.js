@@ -25,7 +25,9 @@ function Item(props) {
   const formattedBuyDate = formatDate(props.item.buyDate);
   const formattedExpireDate = formatDate(props.item.expireDate);
 
-  console.log('Item component:', props.item); // Add this line
+  console.log('Item component:', props.item);
+
+  const dayOrdaysText = props.daysToExpire > 1 ? 'dagen' : 'dag';
 
   return (
     <article className="flex flex-column item glass-block">
@@ -35,9 +37,13 @@ function Item(props) {
         <p>{props.item.storage}</p>
       </div>
       {props.daysToExpire < 0 ? (
-        <p>Dagen overtijd: {-props.daysToExpire}</p>
+        <p>
+          {-props.daysToExpire} {dayOrdaysText} overtijd
+        </p>
       ) : (
-        <p>Dagen Resterend: {props.daysToExpire}</p>
+        <p>
+          {props.daysToExpire} {dayOrdaysText} Resterend
+        </p>
       )}
       <article className="flex progress-container">
         <p>{formattedBuyDate}</p>
