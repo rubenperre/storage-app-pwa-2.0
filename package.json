@@ -3,6 +3,7 @@
   "author": "Ruben Perrewe",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/storage-app",
   "dependencies": {
     "@babel/eslint-parser": "^7.25.1",
     "@testing-library/jest-dom": "^5.17.0",

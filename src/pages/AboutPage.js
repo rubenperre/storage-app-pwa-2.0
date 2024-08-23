@@ -4,7 +4,7 @@ function AboutPage() {
   return (
     <section className="about">
       <header>
-        <h2>About</h2>
+        <h2>ABOUT</h2>
       </header>
       <About />
     </section>

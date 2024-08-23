@@ -5,7 +5,7 @@ function StoragePage() {
   return (
     <section>
       <header>
-        <h2>Storage</h2>
+        <h2>STORAGE</h2>
       </header>
       <Storage />
     </section>

@@ -1,4 +1,31 @@
 $black: #252525;
+
+
+[data-theme='dark'] {
+  --bg-color-1: #453be9;
+  --bg-color-2: #ee49fd;
+  --text-color: white;
+  --accent: darkred;
+  --glass-color: rgba(37, 37, 37, 0.58);
+  --glass-border: rgba(37, 37, 37);
+  --bg-contrast: #FFF;
+}
+
+[data-theme='light'] {
+  /*
+    --bg-color-1: #00B4B2;
+    --bg-color-2: #74FEBD;*/
+
+  --bg-color-1: #00FFFB;
+  --bg-color-2: #74FEA5;
+
+  --text-color: #4B453F;
+  --accent: purple;
+  --glass-color: rgba(255, 255, 255, 0.58);
+  --glass-border: rgba(255, 255, 255);
+  --bg-contrast: #4B453F;
+}
+
 $black-transparent: rgba($black, 0.58);
 
 @mixin black-back-blur($blur) {

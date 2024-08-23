@@ -6,7 +6,7 @@ function AddItemPage() {
   return (
     <section className="add-item-page">
       <header>
-        <h2>Add an Item</h2>
+        <h2>ADD AN ITEM</h2>
       </header>
       <div className="scrollable-container">
         <AddItem />
